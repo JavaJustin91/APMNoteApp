@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-2">
+        <ul class="nav nav-pills flex-column">
+            <li class="nav-item" id="li-home"><a class="nav-link active" href="#!/">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#!/create">New note</a></li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <div ng-controller="notesCtrl">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Content</th>
+                    <th scope="col">Created</th>
+                    <th scope="col" class="tCenter">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="table-active" ng-repeat="note in notes.info">
+                    <td>{{note.title}}</td>
+                    <td>{{note.content}}</td>
+                    <td>{{note.date_created}}</td>
+                    <td class="tCenter">
+                        <a ng-href="#!/view/{{note.id}}" class="btn btn-info">VIEW</a>
+                        <a ng-href="#!/delete/{{note.id}}" class="btn btn-danger" id="btn-spacing">DELETE</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
