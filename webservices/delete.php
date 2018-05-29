@@ -7,7 +7,7 @@
         if($query){
             $result = array("status"=>1, ""=>"Note Deleted");
         } else {
-            $result = array("status"=>1, ""=>"Failed to delete note!");
+            $result = array("status"=>0, ""=>"Failed to delete note!");
         }
     }
 @mysqli_close($conn);

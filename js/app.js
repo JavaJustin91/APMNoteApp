@@ -17,6 +17,10 @@ noteApp.config(function ($routeProvider) {
             templateUrl: 'templates/delete.html',
             controller: 'deleteCtrl'
         })
+        .when('/update/:id', {
+            templateUrl: 'templates/update.html',
+            controller: 'updateCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         })
@@ -58,6 +62,29 @@ noteApp.controller("createCtrl", function($scope) {
             $.ajax({
                 type:'POST',
                 url: 'http://localhost/NoteApp/webservices/createNote.php',
+                data:dataString,
+                cache: false,
+                success: function(result){
+                    $("#msg").html(result);
+                    var title = $("#title").val("");
+                    var content = $("#content").val("");
+                }
+            });
+        }
+        return false;
+    });
+});
+noteApp.controller("updateCtrl", function($scope) {
+    $("#submit").click(function(){
+        var title = $("#title").val();
+        var content = $("#content").val();
+        var dataString = $("#updateForm").serialize();
+        if(title === "" || content === ""){
+            $("#msg").html("Missing required fields");
+        } else {
+            $.ajax({
+                type:'POST',
+                url: 'http://localhost/NoteApp/webservices/update.php',
                 data:dataString,
                 cache: false,
                 success: function(result){
