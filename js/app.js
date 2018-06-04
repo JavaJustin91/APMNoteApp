@@ -74,6 +74,17 @@ noteApp.controller("createCtrl", function($scope) {
         return false;
     });
 });
+// noteApp.controller("updateCtrl", function ($scope, $http, $routeParams) {
+//     $http({
+//         url: "http://localhost/NoteApp/webservices/update.php",
+//         params:{id:$routeParams.id},
+//         method: "get"
+//     })
+//         .then(function(response){
+//             $scope.notes = response.data;
+//             console.log($scope.notes)
+//         });
+// });
 noteApp.controller("updateCtrl", function($scope) {
     $("#submit").click(function(){
         var title = $("#title").val();
@@ -86,12 +97,7 @@ noteApp.controller("updateCtrl", function($scope) {
                 type:'POST',
                 url: 'http://localhost/NoteApp/webservices/update.php',
                 data:dataString,
-                cache: false,
-                success: function(result){
-                    $("#msg").html(result);
-                    var title = $("#title").val("");
-                    var content = $("#content").val("");
-                }
+                cache: false
             });
         }
         return false;

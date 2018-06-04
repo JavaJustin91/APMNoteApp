@@ -1,19 +1,23 @@
 <?php
-include_once('config.php');
-$title = $_GET['title'];
-$content = $_GET['content'];
-$today = date('Y-m-d');
+include_once 'config.php';
 $id = $_GET['id'];
-
-if (!empty($id)) {
+if(!empty($id)) {
     $sql = "UPDATE notes SET title=$title, content=$content, date_created=$today WHERE id=$id";
     $query = $conn->query($sql);
-    if ($query) {
-        $result = array("status" => 1, "" => "Note Updated!");
+    if ($query->num_rows > 0) {
+        while ($row = $query->fetch_array()) {
+            $id = $row['id'];
+            $title = $row['title'];
+            $content = $row['content'];
+            $date_created = $row['date_created'];
+            $result = array('id' => $id, 'title' => $title, 'content' => $content, 'date_created' => $date_created);
+        }
+        $json = $result;
     } else {
-        $result = array("status" => 0, "" => "Failed to update note!");
+        $json = array('status' => 0, 'msg' => 'Not Found!');
     }
 }
 @mysqli_close($conn);
 header('Content-type: application/json');
-echo json_encode($result);
+echo json_encode($json);
+
