@@ -17,10 +17,6 @@ noteApp.config(function ($routeProvider) {
             templateUrl: 'templates/delete.html',
             controller: 'deleteCtrl'
         })
-        .when('/update/:id', {
-            templateUrl: 'templates/update.html',
-            controller: 'updateCtrl'
-        })
         .otherwise({
             redirectTo: '/'
         })
@@ -52,11 +48,14 @@ noteApp.controller("deleteCtrl", function ($scope, $http, $routeParams) {
         });
 });
 noteApp.controller("createCtrl", function($scope) {
-    $("#submit").click(function(){
-        var title = $("#title").val();
-        var content = $("#content").val();
+    $scope.note = {
+        title:"",
+        content:""
+    };
+
+    $scope.save = function(){
         var dataString = $("#createForm").serialize();
-        if(title === "" || content === ""){
+        if($scope.note.title === "" || $scope.note.content === ""){
             $("#msg").html("Missing required fields");
         } else {
             $.ajax({
@@ -66,40 +65,12 @@ noteApp.controller("createCtrl", function($scope) {
                 cache: false,
                 success: function(result){
                     $("#msg").html(result);
-                    var title = $("#title").val("");
-                    var content = $("#content").val("");
+                    $scope.note.title = $("#title").val("");
+                    $scope.note.content = $("#content").val("");
                 }
             });
         }
         return false;
-    });
-});
-// noteApp.controller("updateCtrl", function ($scope, $http, $routeParams) {
-//     $http({
-//         url: "http://localhost/NoteApp/webservices/update.php",
-//         params:{id:$routeParams.id},
-//         method: "get"
-//     })
-//         .then(function(response){
-//             $scope.notes = response.data;
-//             console.log($scope.notes)
-//         });
-// });
-noteApp.controller("updateCtrl", function($scope) {
-    $("#submit").click(function(){
-        var title = $("#title").val();
-        var content = $("#content").val();
-        var dataString = $("#updateForm").serialize();
-        if(title === "" || content === ""){
-            $("#msg").html("Missing required fields");
-        } else {
-            $.ajax({
-                type:'POST',
-                url: 'http://localhost/NoteApp/webservices/update.php',
-                data:dataString,
-                cache: false
-            });
-        }
-        return false;
-    });
+    };
+
 });
