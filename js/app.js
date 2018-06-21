@@ -13,6 +13,10 @@ noteApp.config(function ($routeProvider) {
             templateUrl: 'templates/view.html',
             controller: 'viewCtrl'
         })
+        .when('/edit/:id', {
+            templateUrl: 'templates/edit.html',
+            controller: 'editCtrl'
+        })
         .when('/delete/:id', {
             templateUrl: 'templates/delete.html',
             controller: 'deleteCtrl'
@@ -27,6 +31,7 @@ noteApp.controller("notesCtrl", function ($scope, $http) {
             $scope.notes = response.data;
         });
 });
+
 noteApp.controller("viewCtrl", function ($scope, $http, $routeParams) {
     $http({
         url: "http://localhost/NoteApp/webservices/getNote.php",
@@ -37,6 +42,7 @@ noteApp.controller("viewCtrl", function ($scope, $http, $routeParams) {
             $scope.notes = response.data;
         });
 });
+
 noteApp.controller("deleteCtrl", function ($scope, $http, $routeParams) {
     $http({
         url: "http://localhost/NoteApp/webservices/delete.php",
@@ -47,12 +53,38 @@ noteApp.controller("deleteCtrl", function ($scope, $http, $routeParams) {
             $scope.notes = response.data;
         });
 });
+noteApp.controller("editCtrl", function($scope, $http, $routeParams) {
+
+    $http({
+        url: "http://localhost/NoteApp/webservices/getNote.php",
+        params:{id:$routeParams.id},
+        method: "get"
+    })
+        .then(function(response){
+            $scope.notes = response.data;
+        });
+
+    $scope.saveEdit = function(){
+        if($scope.note.title === "" || $scope.note.content === ""){
+            $("#msg").html("Missing required fields");
+        } else {
+            $.ajax({
+                type:'POST',
+                url: 'http://localhost/NoteApp/webservices/editNote.php',
+                cache: false,
+                success: function(result){
+                    $("#msg").html(result);
+                }
+            });
+        }
+        return false;
+    };
+});
 noteApp.controller("createCtrl", function($scope) {
     $scope.note = {
         title:"",
         content:""
     };
-
     $scope.save = function(){
         var dataString = $("#createForm").serialize();
         if($scope.note.title === "" || $scope.note.content === ""){
@@ -72,5 +104,4 @@ noteApp.controller("createCtrl", function($scope) {
         }
         return false;
     };
-
 });
