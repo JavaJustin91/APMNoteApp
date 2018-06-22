@@ -28,77 +28,77 @@ noteApp.config(function ($routeProvider) {
 noteApp.controller("notesCtrl", function ($scope, $http) {
     $http.get("http://localhost/NoteApp/webservices/allNotes.php")
         .then(function (response) {
-            $scope.notes = response.data;
+            $scope.allNotes = response.data;
         });
 });
 
 noteApp.controller("viewCtrl", function ($scope, $http, $routeParams) {
     $http({
         url: "http://localhost/NoteApp/webservices/getNote.php",
-        params:{id:$routeParams.id},
+        params: {id: $routeParams.id},
         method: "get"
     })
-        .then(function(response){
-            $scope.notes = response.data;
+        .then(function (response) {
+            $scope.viewNote = response.data;
         });
 });
 
 noteApp.controller("deleteCtrl", function ($scope, $http, $routeParams) {
     $http({
         url: "http://localhost/NoteApp/webservices/delete.php",
-        params:{id:$routeParams.id},
+        params: {id: $routeParams.id},
         method: "get"
     })
-        .then(function(response){
-            $scope.notes = response.data;
+        .then(function (response) {
+            $scope.deleteNote = response.data;
         });
 });
-noteApp.controller("editCtrl", function($scope, $http, $routeParams) {
+noteApp.controller("editCtrl", function ($scope, $http, $routeParams) {
 
     $http({
-        url: "http://localhost/NoteApp/webservices/getNote.php",
-        params:{id:$routeParams.id},
+        url: "http://localhost/NoteApp/webservices/edit.php",
+        params: {id: $routeParams.id},
         method: "get"
     })
-        .then(function(response){
-            $scope.notes = response.data;
+        .then(function (response) {
+            $scope.editNote = response.data;
         });
 
-    $scope.saveEdit = function(){
-        if($scope.note.title === "" || $scope.note.content === ""){
+
+    $scope.saveEdit = function () {
+        if ($scope.editNote.title === "" || $scope.editNote.content === "") {
             $("#msg").html("Missing required fields");
         } else {
-            $.ajax({
-                type:'POST',
-                url: 'http://localhost/NoteApp/webservices/editNote.php',
-                cache: false,
-                success: function(result){
-                    $("#msg").html(result);
-                }
-            });
+            $http({
+                url: "http://localhost/NoteApp/webservices/editNote.php",
+                method: "POST",
+                params: {id: $routeParams.id}
+            })
+                .then(function successCallback(response) {
+                    $scope.editNote = response.data;
+                }, function errorCallback(response) {
+                    $scope.error = response.statusText;
+                });
         }
-        return false;
-    };
+    }
+
 });
-noteApp.controller("createCtrl", function($scope) {
-    $scope.note = {
-        title:"",
-        content:""
-    };
-    $scope.save = function(){
+noteApp.controller("createCtrl", function ($scope) {
+    $scope.createNote = {};
+    $scope.save = function () {
         var dataString = $("#createForm").serialize();
-        if($scope.note.title === "" || $scope.note.content === ""){
+        if ($scope.createNote.title === "" || $scope.createNote.content === "") {
             $("#msg").html("Missing required fields");
         } else {
             $.ajax({
-                type:'POST',
+                type: 'POST',
                 url: 'http://localhost/NoteApp/webservices/createNote.php',
-                data:dataString,
+                data: dataString,
                 cache: false,
-                success: function(result){
+                success: function (result) {
                     $("#msg").html(result);
-                    $scope.note.title = $("#title").val("");
-                    $scope.note.content = $("#content").val("");
+                    $scope.createNote.title = $("#title").val("");
+                    $scope.createNote.content = $("#content").val("");
                 }
             });
         }

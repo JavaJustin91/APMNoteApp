@@ -6,17 +6,18 @@
         </ul>
     </div>
     <div class="col-md-10">
-        <form class="form-horizontal" id="createForm">
+        <form class="form-horizontal" id="createForm" ng-controller="createCtrl">
             <fieldset>
                 <div class="form-group">
                     <div class="col-md-6">
-                        <input type="text" name="title" class="form-control" id="title" ng-model="note.title" placeholder="Title">
+                        <input type="text" name="title" class="form-control" id="title" ng-model="createNote.title" placeholder="Title">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-6">
-                    <textarea name="content" class="form-control" id="content" rows="3" ng-model="note.content" placeholder="Content"></textarea>
+                    <textarea name="content" class="form-control" id="content" rows="3"
+                              ng-model="createNote.content" placeholder="Content"></textarea>
                 </div>
                 </div>
                 <p id="msg"></p>
