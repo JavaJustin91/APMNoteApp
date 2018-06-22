@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0522293b-1d43-4b20-8335-c0beccb82723" name="Default" comment="Initial commit">
-      <change beforePath="" afterPath="$PROJECT_DIR$/webservices/edit.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eac5999b-8f19-4a79-8a46-022f89aa3775.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/eac5999b-8f19-4a79-8a46-022f89aa3775.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/templates/create.html" afterPath="$PROJECT_DIR$/templates/create.html" />
-      <change beforePath="$PROJECT_DIR$/templates/edit.html" afterPath="$PROJECT_DIR$/templates/edit.html" />
-      <change beforePath="$PROJECT_DIR$/templates/notes.html" afterPath="$PROJECT_DIR$/templates/notes.html" />
-      <change beforePath="$PROJECT_DIR$/templates/view.html" afterPath="$PROJECT_DIR$/templates/view.html" />
-      <change beforePath="$PROJECT_DIR$/webservices/editNote.php" afterPath="$PROJECT_DIR$/webservices/editNote.php" />
+      <change beforePath="$PROJECT_DIR$/webservices/createNote.php" afterPath="$PROJECT_DIR$/webservices/createNote.php" />
+      <change beforePath="$PROJECT_DIR$/webservices/delete.php" afterPath="$PROJECT_DIR$/webservices/delete.php" />
+      <change beforePath="$PROJECT_DIR$/webservices/getNote.php" afterPath="$PROJECT_DIR$/webservices/getNote.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,33 +33,73 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1343">
-              <caret line="79" column="55" lean-forward="false" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
+            <state relative-caret-position="122">
+              <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/edit.html">
+      <file leaf-file-name="create.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="187">
+              <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editNote.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webservices/editNote.php">
+      <file leaf-file-name="allNotes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservices/allNotes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding>
-                <marker date="1529641521831" expanded="true" signature="138:222" ph="UPDATE notes... " />
+                <marker date="1527398372627" expanded="true" signature="41:77" ph="SELECT * FRO... notes" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getNote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservices/getNote.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+              <folding>
+                <marker date="1529669498577" expanded="true" signature="73:104" ph="SELECT * FRO... notes" />
+                <marker date="1529669498577" expanded="true" signature="73:105" ph="SELECT * FRO... notes" />
+                <marker date="1529669498577" expanded="true" signature="73:898" ph="SELECT * FRO... notes" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createNote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservices/createNote.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+              <folding>
+                <marker date="1529670025707" expanded="true" signature="130:184" ph="INSERT INTO notes... " />
+                <marker date="1529670025707" expanded="true" signature="130:194" ph="INSERT INTO notes... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="delete.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webservices/delete.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+              <folding>
+                <marker date="1529670325098" expanded="true" signature="73:102" ph="DELETE FROM notes... " />
+                <marker date="1529670325098" expanded="true" signature="73:103" ph="DELETE FROM notes... " />
               </folding>
             </state>
           </provider>
@@ -91,16 +126,13 @@
       <list>
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/templates/note-view.html" />
-        <option value="$PROJECT_DIR$/webservices/getNote.php" />
         <option value="$PROJECT_DIR$/css/styles.css" />
         <option value="$PROJECT_DIR$/templates/delete.html" />
-        <option value="$PROJECT_DIR$/webservices/delete.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/templates/update.html" />
         <option value="$PROJECT_DIR$/webservices/update.php" />
         <option value="$PROJECT_DIR$/webservices/config.php" />
         <option value="$PROJECT_DIR$/webservices/allNotes.php" />
-        <option value="$PROJECT_DIR$/webservices/createNote.php" />
         <option value="$PROJECT_DIR$/templates/notes.html" />
         <option value="$PROJECT_DIR$/templates/view.html" />
         <option value="$PROJECT_DIR$/templates/create.html" />
@@ -108,6 +140,9 @@
         <option value="$PROJECT_DIR$/webservices/editNote.php" />
         <option value="$PROJECT_DIR$/templates/edit.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/webservices/getNote.php" />
+        <option value="$PROJECT_DIR$/webservices/createNote.php" />
+        <option value="$PROJECT_DIR$/webservices/delete.php" />
       </list>
     </option>
   </component>
@@ -244,15 +279,16 @@
       <workItem from="1529610321256" duration="12128000" />
       <workItem from="1529624293271" duration="2000" />
       <workItem from="1529625591261" duration="17017000" />
-      <workItem from="1529665777141" duration="12000" />
+      <workItem from="1529665777141" duration="4622000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98670000" />
+    <option name="totallyTimeSpent" value="103280000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1273" y="0" width="1294" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15884194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -548,27 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webservices/delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservices/allNotes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservices/createNote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/notes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -583,24 +598,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/delete.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webservices/getNote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -611,11 +612,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
+    <entry file="file://$PROJECT_DIR$/webservices/editNote.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="55" lean-forward="false" selection-start-line="79" selection-start-column="55" selection-end-line="79" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <marker date="1529641521831" expanded="true" signature="138:222" ph="UPDATE notes... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -627,13 +630,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webservices/editNote.php">
+    <entry file="file://$PROJECT_DIR$/webservices/delete.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
           <folding>
-            <marker date="1529641521831" expanded="true" signature="138:222" ph="UPDATE notes... " />
+            <marker date="1529670325098" expanded="true" signature="73:102" ph="DELETE FROM notes... " />
+            <marker date="1529670325098" expanded="true" signature="73:103" ph="DELETE FROM notes... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservices/createNote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <marker date="1529670025707" expanded="true" signature="130:184" ph="INSERT INTO notes... " />
+            <marker date="1529670025707" expanded="true" signature="130:194" ph="INSERT INTO notes... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservices/getNote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="48" lean-forward="true" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+          <folding>
+            <marker date="1529669498577" expanded="true" signature="73:104" ph="SELECT * FRO... notes" />
+            <marker date="1529669498577" expanded="true" signature="73:105" ph="SELECT * FRO... notes" />
+            <marker date="1529669498577" expanded="true" signature="73:898" ph="SELECT * FRO... notes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webservices/allNotes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <marker date="1527398372627" expanded="true" signature="41:77" ph="SELECT * FRO... notes" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="53" column="11" lean-forward="true" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>

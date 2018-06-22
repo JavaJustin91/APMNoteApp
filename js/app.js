@@ -84,7 +84,10 @@ noteApp.controller("editCtrl", function ($scope, $http, $routeParams) {
 
 });
 noteApp.controller("createCtrl", function ($scope) {
-    $scope.createNote = {};
+    $scope.createNote = {
+        title:"",
+        content:""
+    };
     $scope.save = function () {
         var dataString = $("#createForm").serialize();
         if ($scope.createNote.title === "" || $scope.createNote.content === "") {
