@@ -5,25 +5,25 @@
             <li class="nav-item"><a class="nav-link active" href="#!/create">New note</a></li>
         </ul>
     </div>
-    <div class="col-md-10">
-        <form class="form-horizontal" id="createForm" ng-controller="createCtrl">
+    <div class="col-md-10" ng-controller="editCtrl">
+        <form method="POST"  class="form-horizontal" id="editForm">
             <fieldset>
                 <div class="form-group">
                     <div class="col-md-6">
-                        <input type="text" name="title" class="form-control" id="title" ng-model="createNote.title" placeholder="Title">
+                        <input name="title" type="text" class="form-control" id="title" ng-model="editNote.title"/>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <div class="col-md-6">
-                    <textarea name="content" class="form-control" id="content" rows="3"
-                              ng-model="createNote.content" placeholder="Content"></textarea>
-                </div>
+                        <textarea name="content" class="form-control" id="content" rows="3" ng-model="editNote.content"></textarea>
+                    </div>
                 </div>
                 <p id="msg"></p>
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        <input ng-click="save()" type="button" id="submit" class="btn btn-success" value="Add Note"/>
+                        <input type="hidden" name="id" ng-model="editNote.id"/>
+                        <input ng-click="saveEdit()" type="button" id="submit"
+                               class="btn btn-success" name="submit" value="Update"/>
                         <a href="#/" class="btn btn-secondary">Back</a>
                     </div>
                 </div>
