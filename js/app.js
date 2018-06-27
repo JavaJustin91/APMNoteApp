@@ -89,6 +89,7 @@ noteApp.controller("createCtrl", function ($scope) {
         content:""
     };
     $scope.save = function () {
+        //console.log(JSON.stringify($scope.createNote));
         var dataString = $("#createForm").serialize();
         if ($scope.createNote.title === "" || $scope.createNote.content === "") {
             $("#msg").html("Missing required fields");
