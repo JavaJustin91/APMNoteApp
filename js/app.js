@@ -26,7 +26,7 @@ noteApp.config(function ($routeProvider) {
         })
 });
 noteApp.controller("notesCtrl", function ($scope, $http) {
-    $http.get("http://localhost/NoteApp/webservices/allNotes.php")
+    $http.get("http://noteapp:8888/webservices/allNotes.php")
         .then(function (response) {
             $scope.allNotes = response.data;
         });
@@ -34,7 +34,7 @@ noteApp.controller("notesCtrl", function ($scope, $http) {
 
 noteApp.controller("viewCtrl", function ($scope, $http, $routeParams) {
     $http({
-        url: "http://localhost/NoteApp/webservices/getNote.php",
+        url: "http://noteapp:8888/webservices/getNote.php",
         params: {id: $routeParams.id},
         method: "get"
     })
@@ -45,7 +45,7 @@ noteApp.controller("viewCtrl", function ($scope, $http, $routeParams) {
 
 noteApp.controller("deleteCtrl", function ($scope, $http, $routeParams) {
     $http({
-        url: "http://localhost/NoteApp/webservices/delete.php",
+        url: "http://noteapp:8888/webservices/delete.php",
         params: {id: $routeParams.id},
         method: "get"
     })
@@ -56,7 +56,7 @@ noteApp.controller("deleteCtrl", function ($scope, $http, $routeParams) {
 noteApp.controller("editCtrl", function ($scope, $http, $routeParams) {
 
     $http({
-        url: "http://localhost/NoteApp/webservices/edit.php",
+        url: "http://noteapp:8888/webservices/edit.php",
         params: {id: $routeParams.id},
         method: "get"
     })
@@ -70,7 +70,7 @@ noteApp.controller("editCtrl", function ($scope, $http, $routeParams) {
             $("#msg").html("Missing required fields");
         } else {
             $http({
-                url: "http://localhost/NoteApp/webservices/editNote.php",
+                url: "http://noteapp:8888/webservices/editNote.php",
                 method: "POST",
                 params: {id: $routeParams.id}
             })
@@ -96,7 +96,7 @@ noteApp.controller("createCtrl", function ($scope) {
         } else {
             $.ajax({
                 type: 'POST',
-                url: 'http://localhost/NoteApp/webservices/createNote.php',
+                url: 'http://noteapp:8888/webservices/createNote.php',
                 data: dataString,
                 cache: false,
                 success: function (result) {
